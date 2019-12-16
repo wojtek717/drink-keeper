@@ -22,7 +22,7 @@ class CircularIconButton extends StatelessWidget {
     return RawMaterialButton(
       onPressed: onTap,
       constraints: BoxConstraints.tightFor(
-        width: 100.0,
+        width: 110.0,
         height: 50.0,
       ),
       shape: RoundedRectangleBorder(

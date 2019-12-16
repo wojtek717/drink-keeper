@@ -4,7 +4,7 @@ const kMainColor = Colors.blue;
 const kMainSplashColor = Colors.blueGrey;
 
 const kCircularIconButtonTextStyle = TextStyle(
-    fontSize: 20.0,
+    fontSize: 19.0,
     color: Colors.white,
     fontWeight: FontWeight.bold
 );

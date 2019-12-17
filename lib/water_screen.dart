@@ -3,6 +3,7 @@ import 'package:percent_indicator/percent_indicator.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:drink_keeper/CircularIconButton.dart';
 import 'DrinkEvent.dart';
+import 'constants.dart';
 
 class WaterScreen extends StatefulWidget {
   @override
@@ -44,7 +45,30 @@ class _WaterScreenState extends State<WaterScreen> {
                   radius: 200.0,
                   lineWidth: 12.0,
                   percent: _getProgressPercent(),
-                  center: Text(waterAmount.toString() + 'ml'),
+                  center: Row(
+                    //textBaseline: TextBaseline.alphabetic,
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: <Widget>[
+                      Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: <Widget>[
+                          Text(
+                            waterAmount.toString(),
+                            style: kProgresStatusBigTextStyle,
+                          ),
+                          Text(
+                            '/' + goalAmount.toString(),
+                            style: kProgresStatusTextStyle,
+                          ),
+                        ],
+                      ),
+//                      Text(
+//                        'ml',
+//                        style: kProgresStatusBigBigTextStyle,
+//                      ),
+                    ],
+                  ),
                   progressColor: Colors.blue,
                 ),
               ),
@@ -92,18 +116,29 @@ class _WaterScreenState extends State<WaterScreen> {
                   ),
                 ],
               ),
-              Text('Your drinks:'),
-              Container(
-                height: 250.0,
-                child: ListView.builder(
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: <Widget>[
+                  Text(
+                    'Todays drinks:',
+                    style: kListTitleTextStyle,
+                  ),
+                  SizedBox(
+                    height: 10.0,
+                  ),
+                  Container(
+                    height: 250.0,
+                    child: ListView.builder(
 //                    separatorBuilder: (context, index) => Divider(
 //                          color: Colors.black,
 //                        ),
-                    scrollDirection: Axis.vertical,
-                    itemCount: drinks.length,
-                    itemBuilder: (BuildContext ctxt, int index) {
-                      return (drinks[index]);
-                    }),
+                        scrollDirection: Axis.vertical,
+                        itemCount: drinks.length,
+                        itemBuilder: (BuildContext ctxt, int index) {
+                          return (drinks[index]);
+                        }),
+                  ),
+                ],
               ),
             ],
           ),

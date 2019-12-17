@@ -8,3 +8,15 @@ const kCircularIconButtonTextStyle = TextStyle(
     color: Colors.white,
     fontWeight: FontWeight.bold
 );
+
+const kDrinkEventTextStyle = TextStyle(
+    fontSize: 15.0,
+    color: Colors.white,
+    fontWeight: FontWeight.bold
+);
+
+const kDrinkEventBigTextStyle = TextStyle(
+    fontSize: 30.0,
+    color: Colors.white,
+    fontWeight: FontWeight.bold
+);
